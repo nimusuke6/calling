@@ -30,6 +30,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+      - run: docker compose up -d
       - run: composer install
       - run: php artisan migrate --env=testing
       - run: php artisan test
